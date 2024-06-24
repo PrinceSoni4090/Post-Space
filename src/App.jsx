@@ -5,6 +5,7 @@ import authService from './appwrite/auth'
 import { login, logout } from './store/authSlice'
 import { Header, Footer } from './components'
 import { Outlet } from 'react-router-dom'
+import Manager from './components/Manager'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -21,17 +22,20 @@ function App() {
   }, [dispatch])
 
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap content-between bg-gray-600' >
+    <div className='min-h-screen flex flex-wrap content-between ' >
       <div className='w-full'>
+        
         <Header />
         <main>
           <Outlet /> 
+          
         </main>
       </div>
       <div className='w-full block'>
         <Footer />
-
+      
       </div>
+      
 
     </div>
   ) : null
