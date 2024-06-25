@@ -1,9 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import appwriteService from '../appwrite/config';
 import {Container, PostCard} from '../components'
+import { Link,useNavigate } from 'react-router-dom';
 
 function Home() {
     const [posts, setPosts] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         appwriteService.getPosts().then((posts) => {
@@ -20,8 +22,12 @@ function Home() {
                 <Container>
                     <div className='flex flex-wrap'>
                     <div className='p-2 w-full'>
-                    <h1 className='text-2xl font-bold hover:text-gray-500 ' >
-                        No posts 
+                    <h1 className='text-2xl font-bold text-primary hover:text-gray-500 ' >
+                    <Link
+                        to="/login"
+                        className="font-bold text-primary transition-all duration-200 hover:underline   ">
+                       Login to see posts
+                    </Link>    
                     </h1>
                     </div>
                     </div>
