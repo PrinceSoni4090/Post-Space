@@ -110,7 +110,7 @@ export default function PostForm({ post }) {
                 <Select 
                     options={["active", "inactive"]}
                     label="Status"
-                    className="mb-4 text-blue-950"
+                    className="mb-4 text-gray-900"
                     {...register("status", { required: true })}
                 />
                 <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
